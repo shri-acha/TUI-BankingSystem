@@ -1,4 +1,6 @@
 #include<iostream>
+#include<string>
+#include<cstlib>
 using namespace std;
 void banner();
 struct user{
@@ -6,7 +8,7 @@ struct user{
         string name;
         long int phone_number;
         string password;
-}
+};
 int main(){
         do{
            system("cls");
