@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include<cstlib>
+#include<cstdlib>
 using namespace std;
 void banner();
 struct user{
