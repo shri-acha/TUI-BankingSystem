@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 void banner();
+struct user{
+        int id;
+        string name;
+        long int phone_number;
+        string password;
+}
 int main(){
         do{
            system("cls");
