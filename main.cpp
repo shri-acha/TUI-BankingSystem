@@ -1,41 +1,60 @@
 #include<iostream>
 #include<string>
 #include<cstdlib>
-#include "functions.h"
+// #include "functions.h"
 
 using namespace std;
 void banner();
-void choice();
+int askUser();
+void exit();
+
 struct user{
         int id;
         string name;
         long int phone_number;
         string password;
 };
+
+int userChoice;
 int main(){
-        system("cls");
         banner();
-        choice();
+        userChoice = askUser();
+        while(userChoice > 3 || userChoice < 1){
+                banner();
+                userChoice = askUser();
+        }
+        switch(userChoice){
+                case 1:
+                        // login();
+                        break;
+                case 2:
+                        // signUp();
+                        break;
+                case 3:
+                        exit();
+                        break;
+        }
         return 0;
 }
+
+
 void banner(){
+        system("cls");
         cout <<"__________________________________________"<<endl;
         cout <<"               TUI-BANKING SYSTEM          "<<endl;
         cout <<"__________________________________________"<<endl;
-        cout <<"1.Login in"<<endl;
-        cout <<"2.Sign up"<<endl;
-        cout <<"__________________________________________"<<endl;
 }
 
-void choice(){
-        int x;
-        cin >> x;
-        if (x==1){
-                system("cls");
-                login();
-        }
-        else if (x==2){
-                system("cls");
-                signUp();
-        }
+int askUser(){
+       cout << "1. Log in"<<endl;
+       cout << "2. Signup"<<endl;
+       cout << "3. Exit"<<endl;
+       int choice;
+       cout << "Please enter your choice: ";
+       cin >> choice;
+       return choice;
+}
+
+void exit(){
+        cout << "Thank you for using our service."<<endl;
 }
