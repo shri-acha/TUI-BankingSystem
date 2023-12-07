@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<cstdlib>
-// #include "functions.h"
+//#include "functions.h"
 
 using namespace std;
 void banner();
@@ -25,10 +25,10 @@ int main(){
         }
         switch(userChoice){
                 case 1:
-                        // login();
+                        //login();
                         break;
                 case 2:
-                        // signUp();
+                        //signUp();
                         break;
                 case 3:
                         exit();
