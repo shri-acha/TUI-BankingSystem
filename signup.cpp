@@ -11,7 +11,7 @@ string password[2];
 void signUp(){
     banner();
     ofstream userfile;
-    userfile.open("userData/users.txt", ios::app);
+    userfile.open("userData/users.csv", ios::app);
 
 
     cout << "Enter your name : ";
@@ -43,9 +43,9 @@ void signUp(){
     } 
     while (password[1] != password[0]);
     
-    userfile <<"\n"<< name <<"\t"<< phoneNumber << "\t" << password[1];
+    userfile <<"\n"<< name <<","<< phoneNumber << "," << password[1];
     userfile.close();
-    
+
     cout << "Account creation successful"<<endl;
 
     cout << "Do you want to login now?(y/n):";
