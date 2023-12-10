@@ -43,10 +43,17 @@ void signUp(){
     } 
     while (password[1] != password[0]);
 
-    userfile << name <<"\t"<< phoneNumber << "\t" << password[0];
-    userfile << name;
-    userfile << password[0];
-    userfile << phoneNumber;
+    userfile <<"\n"<< name <<"\t"<< phoneNumber << "\t" << password[1];
     userfile.close();
     cout << "Account creation successful"<<endl;
+
+    cout << "Do you want to login now?(y/n):";
+    char restart;
+    cin >> restart;
+    if(restart == 'y' || restart == 'Y'){
+        login();
+    }
+    else{
+        exit();
+    }
 }

@@ -4,18 +4,24 @@
 #include<string.h>
 using namespace std;
 
-struct user
+class User
 {
-    int id;
-    string name;
-    long int phone_number;
-    string password;
+    public:
+     User(string name,string& password){
+        userName = name;
+        userPassword = password;
+    }
+    private:
+    string userName;
+    string userPassword;
 };
+
 void login(){
     banner();
-    user person;
+    string temp_name;
+    string temp_pass;
     cout<<"Enter your name : ";
-    cin >> person.name;
+    cin >> temp_name;
     cout<<"Enter Password : ";
-    cin >> person.password;
+    cin >> temp_pass;
 }
