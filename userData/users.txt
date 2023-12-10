@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 name	phoneNumber	password
+=======
+name	phoneNumber	password
+
+>>>>>>> d2da4f01d891ce508f14e44f375a652737856a06
