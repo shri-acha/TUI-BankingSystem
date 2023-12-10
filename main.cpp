@@ -18,7 +18,6 @@ int main(){
         }
         switch(userChoice){
                 case 1:
-                        banner();
                         login();
                         break;
                 case 2:
