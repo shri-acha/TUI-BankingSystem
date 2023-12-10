@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<cstdlib>
-//#include "functions.h"
+#include "functions.h"
 
 using namespace std;
 void banner();
@@ -18,28 +18,12 @@ struct user{
 int userChoice;
 int main(){
         banner();
-        userChoice = askUser();
-        while(userChoice > 3 || userChoice < 1){
-                banner();
-                userChoice = askUser();
-        }
-        switch(userChoice){
-                case 1:
-                        //login();
-                        break;
-                case 2:
-                        //signUp();
-                        break;
-                case 3:
-                        exit();
-                        break;
-        }
+        choice();
         return 0;
 }
 
 
 void banner(){
-        system("cls");
         cout <<"__________________________________________"<<endl;
         cout <<"               TUI-BANKING SYSTEM          "<<endl;
         cout <<"__________________________________________"<<endl;
