@@ -3,11 +3,18 @@
 #include<fstream>
 #include<string.h>
 using namespace std;
+
+struct user
+{
+    int id;
+    string name;
+    long int phone_number;
+    string password;
+};
 void login(){
-    ofstream fout;//defining the output stream for file
-    string line;//line to read off of the console
-    //fout.open("test.txt");
-    cout <<"__________________________________________"<<endl;
-    cout<<"Enter Username:\t"<<endl;
-    cout<<"Enter Password:\t"<<endl;
+    user person;
+    cout<<"Enter your name : ";
+    cin >> person.name;
+    cout<<"Enter Password : ";
+    cin >> person.password;
 }
