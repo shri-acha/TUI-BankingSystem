@@ -12,6 +12,7 @@ struct user
     string password;
 };
 void login(){
+    banner();
     user person;
     cout<<"Enter your name : ";
     cin >> person.name;
