@@ -43,6 +43,13 @@ void signUp(){
     } 
     while (password[1] != password[0]);
 
+<<<<<<< HEAD
     userfile << name <<"\t"<< phoneNumber << "\t" << password[0];
+=======
+    userfile << name;
+    userfile << password[0];
+    userfile << phoneNumber;
+    userfile.close();
+>>>>>>> 7741f1d (major changes)
     cout << "Account creation successful"<<endl;
 }
