@@ -16,8 +16,6 @@ class User
     bool compare(string vusr,string vpsd){
         
         if(userName == vusr && userPassword == vpsd){
-            cout<<userName<<endl;
-            cout<<userPassword<<endl;
             return true;
         }
         else{
@@ -41,8 +39,7 @@ void login(){
     bool value = true;
     vector<string> userVector;
     vector<string> passVector;
-    readFile.open("userData/users.txt");
-
+    readFile.open("userData/users.csv");
     while(getline(readFile,line)){
         string s;
         stringstream ss(line);
@@ -52,19 +49,30 @@ void login(){
             continue;
         }
         while(getline(ss,s,',')){
-            cout<<s<<count<<endl;
-           count++;
+            if(count==0){userVector.push_back(s);count++;}
+            else if(count==2){passVector.push_back(s); count=0;}
+            else{count++;}
+
         }
     }
     User tmp_usr(temp_name,temp_pass);
-
     for(int j=0;j<userVector.size();j++){
-    cout<<"working"<<endl;
     if(tmp_usr.compare(userVector[j],passVector[j])){
         cout <<"User Found,Access Granted"<<endl;
+        break;
     }
     else{
         cout<<"Access Denied,Try again!"<<endl;
+        cout << "Do you want to try again?(y/n):";
+        char restart;
+        cin >> restart;
+    if(restart == 'y' || restart == 'Y'){
+        login();
+    }
+    else{
+        exit();
+        break;
+    }
     }    
 }
 }   
