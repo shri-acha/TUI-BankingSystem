@@ -37,6 +37,7 @@ void login(){
 
     ifstream readFile;
     bool value = true;
+    bool access =false;
     vector<string> userVector;
     vector<string> passVector;
     readFile.open("userData/users.csv");
@@ -58,21 +59,22 @@ void login(){
     User tmp_usr(temp_name,temp_pass);
     for(int j=0;j<userVector.size();j++){
     if(tmp_usr.compare(userVector[j],passVector[j])){
-        cout <<"User Found,Access Granted"<<endl;
+        cout<<"Access Granted!"<<endl;
+        access=true;
         break;
     }
-    else{
-        cout<<"Access Denied,Try again!"<<endl;
+    }
+    if(access ==false){
         cout << "Do you want to try again?(y/n):";
-        char restart;
+    char restart;
         cin >> restart;
     if(restart == 'y' || restart == 'Y'){
         login();
     }
     else{
         exit();
-        break;
     }
-    }    
+    }
+
 }
-}   
+
